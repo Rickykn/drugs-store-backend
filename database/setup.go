@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/Rickykn/drugs-store-backend.git/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -28,6 +29,8 @@ func Connect() (err error) {
 	if err != nil {
 		panic(err)
 	}
+
+	db.AutoMigrate(&models.User{})
 
 	return nil
 }
