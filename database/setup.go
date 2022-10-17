@@ -31,6 +31,10 @@ func Connect() (err error) {
 	}
 
 	db.AutoMigrate(&models.User{})
+	db.AutoMigrate(&models.Address{})
+	db.AutoMigrate(&models.Drug{})
+	db.AutoMigrate(&models.Inventory{})
+	db.AutoMigrate(&models.Pharmacy{})
 
 	return nil
 }
