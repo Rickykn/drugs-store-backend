@@ -44,6 +44,7 @@ func main() {
 	{
 
 		users.POST("/register", h.RegisterUser)
+		users.POST("/login", h.LoginUser)
 	}
 
 	err := r.Run()

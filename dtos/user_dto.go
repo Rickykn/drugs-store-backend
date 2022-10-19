@@ -14,3 +14,18 @@ type UserRegisterResponse struct {
 	Phone_number int    `json:"phone_number" `
 	Gender       string `json:"gender" `
 }
+
+type LoginUserDTO struct {
+	Email    string `json:"email" binding:"required"`
+	Password string `json:"password" binding:"required"`
+}
+
+type TokenDTO struct {
+	IDToken string `json:"idToken"`
+}
+
+type ResponseTokenDTO struct {
+	ID    int    `json:"id"`
+	Name  string `json:"name"`
+	Email string `json:"email"`
+}
