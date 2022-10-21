@@ -35,9 +35,18 @@ func main() {
 		UserRepository: ur,
 	})
 
+	dr := repositories.NewDrugRepository(&repositories.DRConfig{
+		DB: database.Get(),
+	})
+
+	ds := services.NewDrugService(&services.DSConfig{
+		DrugRepository: dr,
+	})
+
 	h := handlers.New(&handlers.HandlerConfig{
 
 		UserService: us,
+		DrugService: ds,
 	})
 
 	users := r.Group("/users")
