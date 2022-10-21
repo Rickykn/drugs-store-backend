@@ -56,6 +56,11 @@ func main() {
 		users.POST("/login", h.LoginUser)
 	}
 
+	drugs := r.Group("/drugs")
+	{
+		drugs.POST("/", h.CreateNewDrug)
+	}
+
 	err := r.Run()
 
 	if err != nil {

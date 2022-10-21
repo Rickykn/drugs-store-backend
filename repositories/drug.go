@@ -25,6 +25,7 @@ func NewDrugRepository(c *DRConfig) DrugRepository {
 }
 
 func (d *drugRepository) Create(inputDrug *dtos.CreateDrugDTO) (*models.Drug, error) {
+
 	newDrug := &models.Drug{
 		Name:                inputDrug.Name,
 		Generic_name:        inputDrug.Generic_name,

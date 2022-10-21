@@ -43,6 +43,7 @@ func (u *userService) Register(registerInput *dtos.UserRegisterDTO) (*models.Use
 	return newUser, help.HandlerSuccess(201, "Success register account", newUser), nil
 }
 func (u *userService) Login(loginInput *dtos.LoginUserDTO) (*dtos.TokenDTO, *help.JsonResponse, error) {
+
 	findUser, row, err := u.userRepository.FindOneUser(loginInput.Email)
 	if row == 0 || err != nil {
 		return nil, help.HandlerError(404, "Wrong email or password", nil), err
