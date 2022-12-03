@@ -49,6 +49,8 @@ func main() {
 		DrugService: ds,
 	})
 
+	r.GET("/", handlers.Home)
+
 	users := r.Group("/users")
 	{
 
